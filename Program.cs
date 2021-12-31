@@ -1,16 +1,14 @@
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
-using Microsoft.EntityFrameworkCore;
 using ASPWebApp.Data;
 using ASPWebApp.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -47,8 +45,8 @@ app.UseIdentityServer();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action=Index}/{id?}");
+    "default",
+    "{controller}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.MapFallbackToFile("index.html");

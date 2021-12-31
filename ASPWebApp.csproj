@@ -19,7 +19,10 @@
         <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="6.0.1" />
     </ItemGroup>
 
     <ItemGroup>
